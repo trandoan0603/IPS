@@ -1,5 +1,7 @@
 package com.example.complete_app_demo;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -17,8 +19,9 @@ import okhttp3.Response;
 
 public class GetData {
 
-    protected String result = null;
-    protected int pos;
+    private static final String TAG = "GetData";
+    private String result = null;
+    private int pos;
 
     public int getPos(){
         return pos;
@@ -53,7 +56,7 @@ public class GetData {
                         JSONObject json = new JSONObject(result);
                         String u = json.getString("a");
                         pos = Integer.parseInt(u.replace("['","").replace("']",""));
-                        System.out.print("Result=" + pos);
+                        Log.d(TAG, "Result=" + pos);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

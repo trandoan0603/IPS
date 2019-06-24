@@ -1,5 +1,7 @@
 package com.example.complete_app_demo;
 
+import android.util.Log;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -10,10 +12,11 @@ import okhttp3.Response;
 
 public class GetName {
 
-    protected String data;
-    protected String s1 ;
-    protected String s2 ;
-    protected String s3;
+    private String data;
+    private String s1 ;
+    private String s2 ;
+    private String s3;
+    private static final String TAG = "GetName";
 
     public String getS1(){
         return s1;
@@ -44,7 +47,7 @@ public class GetName {
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()){
                     data = response.body().string().replace("\"","");
-                    System.out.print("DATA = " + data);
+                    Log.d(TAG,"DATA = " + data);
                     s1 = data.split(",")[0];
                     s2 = data.split(",")[1];
                     s3 = data.split(",")[2].replace("\n","");

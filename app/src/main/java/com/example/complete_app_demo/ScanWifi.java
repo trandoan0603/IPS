@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
+import android.util.Log;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,10 +18,10 @@ public class ScanWifi {
     Activity contextParent;
 
     private List<ScanResult> results;
-    protected int a;
-    protected int b;
-    protected int c;
-
+    private int a;
+    private int b;
+    private int c;
+    private static final String TAG = "ScanWifi";
 
 
 
@@ -50,15 +51,15 @@ public class ScanWifi {
                 for (ScanResult scanResult : results) {
                     if (StringUtils.equals(s1, scanResult.SSID)) {
                         a = -scanResult.level;
-                        System.out.print(s1 + "RSSI1: /n" + a);
+                        Log.d(TAG,s1 + "RSSI1: /n" + a);
                     }
                     if (StringUtils.equals(s2, scanResult.SSID)) {
                         b = -scanResult.level;
-                        System.out.print(s2 + "RSSI1: /n" + b);
+                        Log.d(TAG,s2 + "RSSI1: /n" + b);
                     }
                     if (StringUtils.equals(s3, scanResult.SSID)) {
                         c = -scanResult.level;
-                        System.out.print(s3 + "RSSI1: /n" + c);
+                        Log.d(TAG,s3 + "RSSI1: /n" + c);
                     }
                 }
             }
@@ -66,7 +67,5 @@ public class ScanWifi {
         contextParent.registerReceiver(wifiReceiver, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
         wifiManager.startScan();
         wifiReceiver.onReceive(contextParent, contextParent.getIntent());
-        //textView.setText(s1+ " : "+ a+ "/n" + s2 + " : " +b+"/n" + s3 +" : "+ c);
-        //Toast.makeText(contextParent, "Scanning Wifi ... ", Toast.LENGTH_SHORT).show();
     }
 }

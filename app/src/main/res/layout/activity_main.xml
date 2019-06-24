@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FAFAFA"
     tools:context=".MainActivity">
+
 
 
     <ImageView
         android:id="@+id/houseImg"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="600dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/house"
+        android:src="@drawable/house2"
 
         />
 
@@ -20,8 +22,8 @@
         android:id="@+id/pointImg"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="450px"
-        android:layout_marginTop="1060px"
+        android:layout_marginLeft="470px"
+        android:layout_marginTop="1270px"
         android:background="@android:color/transparent"
         android:src="@drawable/point" />
 
@@ -30,21 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="620dp"
+        android:textColor="#424242"
         android:hint="Location"
         android:textAlignment="center"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
-        android:padding="8dp"
-        android:text="START"
-        android:textSize="14sp" />
+
 
 
 </RelativeLayout>
