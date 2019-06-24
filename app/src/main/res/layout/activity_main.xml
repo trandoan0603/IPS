@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/houseImg"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/house"
+
+        />
+
+    <ImageView
+        android:id="@+id/pointImg"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="450px"
+        android:layout_marginTop="1060px"
+        android:background="@android:color/transparent"
+        android:src="@drawable/point" />
+
+    <TextView
+        android:id="@+id/resultTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:hint="Location"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:text="START"
+        android:textSize="14sp" />
+
+
+</RelativeLayout>
